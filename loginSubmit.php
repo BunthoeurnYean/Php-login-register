@@ -12,7 +12,7 @@ if(isset($_POST['login']))
 
     $name = $_REQUEST['username'];
     $pass = $_REQUEST['password'];
-    $sql = `SELECT username,password FROM user where username=$name and password=$pass `; 
+    $sql = `SELECT * FROM user where username=$name and password=$pass `; 
     $result = mysqli_query($conn , $sql);
 
     if(!result){
