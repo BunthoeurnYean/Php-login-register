@@ -20,7 +20,7 @@
 
 function insert($username ,$firstname , $lastname , $email ,$gender , $phone){
     global $con;
-    $password = 'abc#@1f'.strval(rand(100000,999999));
+    $password = str_suffle('abc#@1f'.strval(rand(100000,999999)));
     $result = mysqli_query( $con,`INSERT into user(username , fistname , lastname, email  , gender , phone , password) 
                             VALUES ('$username' , '$firstname' ,'$lastname' , '$email' ,'$gender' ,'$phone' ,'$password' )`);
     if (!result) {
