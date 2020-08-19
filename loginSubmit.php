@@ -1,11 +1,7 @@
 <?php
 if(isset($_POST['login']))
 {
-    $servername = 'localhost';
-    $username = 'root';
-    $password = ''; 
-    $dbname = "student";
-    $conn = mysqli_connect($servername, $username, $password, "$dbname"); 
+    $conn = mysqli_connect('localhost', 'root', '', 'student'); 
     if (!$conn) {
         die('Could not connect my sql:' .mysql_error()); 
     }
