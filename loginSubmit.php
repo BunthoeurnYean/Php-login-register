@@ -14,8 +14,8 @@ if(isset($_POST['login']))
     $pass = $_REQUEST['password'];
     $sql = `SELECT * FROM user where username=$name and password=$pass `; 
     $result = mysqli_query($conn , $sql);
-
-    if(!result){
+    $row = mysqli_fetch_object($result) > 0;
+    if(!$row){
             echo "username or password incorrect";
     }
     else $_SESSION['username'] = $name;
