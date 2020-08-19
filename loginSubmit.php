@@ -7,7 +7,8 @@ if(isset($_POST['login']))
     }
     $sql = `SELECT * FROM user where username=$_REQUEST['username'] and password=$_REQUEST['password'] `; 
     $result = mysqli_query($conn , $sql);
-    $row = mysqli_fetch_object($result) > 0;
+    //$row = mysqli_fetch_object($result) > 0;
+    $row = $result->fetch_row() > 0;
     if(!$row){
             echo "username or password incorrect";
     }
